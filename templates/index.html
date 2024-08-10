@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HealthProbe</title>
+    <!-- referencies with Flask app
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <script src="{{ url_for('static', filename='libs/gsap/gsap.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='libs/gsap/ScrollTrigger.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='libs/gsap/ScrollSmoother.min.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='libs/swiper-bundle.min.js') }}" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+    -->
+    <!--Referncies without Flask app-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+    <link rel="stylesheet" type="text/css" href="../static/css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+
+    <script src="../static/libs/gsap/gsap.min.js" defer></script>
+    <script src="../static/libs/gsap/ScrollTrigger.min.js" defer></script>
+    <script src="../static/libs/gsap/ScrollSmoother.min.js" defer></script>
+    <script src="../static/libs/swiper-bundle.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
+    <script src="../static/js/app.js" defer></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper-content">
+
+            <!-------------------- HEADER WITH PARALLAX -------------------->
+            <header class="main-header" id="home">
+                <div class="bx bx-menu" id="menu-icon"></div>
+
+                <!-- Navigation bar -->
+                <nav class="navbar">
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>    
+                    <span class="active-nav"></span>             
+                </nav>
+
+                <div class="amk">
+                    <a href="https://www.lapinamk.fi/fi" title="Lapin AMK" target="_blank">
+                        <!--<img class="logo" src="{{ url_for('static', filename='img/lapinamk_logo.png') }}" alt="logo">-->
+                        <img class="logo" src="../static/img/lapinamk_logo.png" alt="logo">
+                    </a> 
+                </div>  
+
+                <!-- Parallax effect header -->
+                <div class="layers">
+                    <div class="layers__header">
+                        <div class="layers__title">Health Probe</div>
+                        <span class="multitext"></span>
+                    </div>
+
+                    <!-- Button leading to Project -->
+                    <div class="btn-box">
+                        <a href="./dashboard.html" class="btn">Try now!</a>
+                    </div>
+
+                    <!-- Button GitHub -->
+                    <div class="btn-box">
+                        <a href="#" class="btn">
+                            <i class="card-icon bx bxl-github"></i>
+                        </a>
+                    </div>
+                    
+                    <!-- Parallax effect layers -->
+                    <div class="layer layers__base" style="background-image: url(static/img/doc.png);"></div>
+                </div>
+            </header>
+        
+            <!-------------------- ABOUT SECTION -------------------->
+            <section class="about" id="about">
+                <div class="about__content" >
+                    <h2 class="about__header">About</h2>
+                    <p class="about__paragraph">
+                        HealthProbe is meant to be a helpful tool for healthcare professionals to monitor wellbeing and safety of elderly people and people with special need so that they can live on their own for longer period without nursing home.
+                    </p>
+                    <p class="about__paragraph">
+                        In HealthProbe there will be a camera to monitor patients in case of alert, so it is possible to confirm by human that readings are correct. HealthProbe has humidity and thermal monitor so that patients living conditions can be monitored so we can avoid general health issues like getting cold or too hot, or for example to prevent asthmatic people from suffering too dry air quality.
+                    </p>
+                    <p class="about__paragraph">
+                        Sound sensor is meant to inform about possible accident that happened to patient, so it captures quick and loud noise that the sensor can detect and forward an alert to be assessed via camera by the healthcare professional to be confirmed if something happened to patient. 
+                    </p>
+                </div>
+            </section>
+
+            <!-------------------- CONTACT SECTION -------------------->
+            
+            <section class="contact container" id="contact">
+                <div class="content">
+                    <h2 class="content heading">Our Team</h2>
+                </div>
+                
+                <div class="card__container swiper">
+                <div class="card__content">
+                    <div class="swiper-wrapper">
+                        <article class="card__article swiper-slide">
+                            <div class="card__image">
+                                <!--<img src="{{ url_for('static', filename='img/blank-profile-picture-973460_640.png') }}" alt="image" class="card__img">-->
+                                <img src="../static/img/blank-profile-picture-973460_640.png" alt="image" class="card__img">
+                                <div class="card__shadow"></div>
+                            </div>
+            
+                            <div class="card__data">
+                                <h3 class="card__name">Kirill Sobolev</h3>
+                                <p class="card__description">
+                                        Project manager
+                                </p>
+                
+                                <a href="mailto:kirill.sobolev@edu.lapinamk.fi" class="card__button">
+                                    <i class="card-icon bx bxs-envelope"></i>
+                                </a>
+                            </div>
+                        </article>
+            
+                        <article class="card__article swiper-slide">
+                            <div class="card__image">
+                                <!--<img src="{{ url_for('static', filename='img/blank-profile-picture-973460_640.png') }}" alt="image" class="card__img">-->
+                                <img src="../static/img/blank-profile-picture-973460_640.png" alt="image" class="card__img">
+                                <div class="card__shadow"></div>
+                            </div>
+            
+                            <div class="card__data">
+                                <h3 class="card__name">Anastasiia Shevkun</h3>
+                                <p class="card__description">
+                                    Team member
+                                </p>
+                
+                                <a href="mailto:anastasiia.shevkun@ulapland.fi" class="card__button">
+                                    <i class="card-icon bx bxs-envelope"></i>
+                                </a>
+                            </div>
+                        </article>
+            
+                        <article class="card__article swiper-slide">
+                            <div class="card__image">
+                                <!--<img src="{{ url_for('static', filename='img/blank-profile-picture-973460_640.png') }}" alt="image" class="card__img">-->
+                                <img src="../static/img/blank-profile-picture-973460_640.png" alt="image" class="card__img">
+                                <div class="card__shadow"></div>
+                            </div>
+            
+                            <div class="card__data">
+                                <h3 class="card__name">Vili Luosujärvi</h3>
+                                <p class="card__description">
+                                    Team member
+                                </p>
+                
+                                <a href="mailto:vili.luosujarvi@edu.lapinamk.fi" class="card__button">
+                                    <i class="card-icon bx bxs-envelope"></i>
+                                </a>
+                            </div>
+                        </article>
+            
+                        <article class="card__article swiper-slide">
+                            <div class="card__image">
+                                <!--<img src="{{ url_for('static', filename='img/blank-profile-picture-973460_640.png') }}" alt="image" class="card__img">-->
+                                <img src="../static/img/blank-profile-picture-973460_640.png" alt="image" class="card__img">
+                                <div class="card__shadow"></div>
+                            </div>
+            
+                            <div class="card__data">
+                                <h3 class="card__name">Vladimir Vasilev</h3>
+                                <p class="card__description">
+                                    Team member
+                                </p>
+                
+                                <a href="mailto:vladimir.vasilev@edu.lapinamk.fi" class="card__button">
+                                    <i class="card-icon bx bxs-envelope"></i>
+                                </a>
+                            </div>
+                        </article>
+                        </div>
+                    </div>
+        
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-next">
+                        <i class="ri-arrow-right-s-line"></i>
+                    </div>
+                    
+                    <div class="swiper-button-prev">
+                        <i class="ri-arrow-left-s-line"></i>
+                    </div>
+        
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </section>
+
+            <!-- <section class="contact" id="contact">
+                <div class="content">
+                    <h2 class="heading">Our Team</h2>
+
+                    <div class="contact-info">
+                        <div class="card">
+                            <a href="mailto:anastasiia.shevkun@gmail.com">
+                                <i class="card-icon bx bxs-envelope"></i>
+                                <p>anastasiia.shevkun@gmail.com</p>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="tel:+358408514952">
+                                <i class="card-icon bx bxs-phone"></i>
+                                <p>+358408514952</p>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="https://www.linkedin.com/in/anastasiia-shevkun-26b748237/" target="_blank">
+                                <i class="card-icon bx bxl-linkedin"></i>
+                                <p>Anastasiia Shevkun</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+            <!-------------------- FOOTER DESIGN -------------------->
+
+            <footer class="footer">
+                <div class="footer-text">
+                    <p class="copy">&copy; Team #3, 2023</p>
+                </div>
+
+                <div class="footer-iconTop">
+                    <a href="#">
+                        <i class="bx bx-up-arrow-alt"></i>
+                    </a>
+                </div>
+            </footer>
+        </div>
+    </div>
+    
+</body>
+</html>

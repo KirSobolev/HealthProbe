@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Dashboard</title>
+        <!--
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/dash-styles.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        
+        <script src="{{ url_for('static', filename='js/charts.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/dsh.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/data_update.js') }}"></script>
+        <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+        --> 
+
+        <link rel="stylesheet" type="text/css" href="../static/css/dash-styles.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+        
+        <script src="../static/js/charts.js" defer></script>
+        <script src="../static/js/dsh.js"></script>
+        <script src="../static/js/data_update.js"></script>
+        <script src="https://cdn.socket.io/4.1.2/socket.io.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js" ></script>
+    </head>
+
+    <body>
+        <div>
+            <nav class="sidebar">
+                    <h1>Dashboard</h1>
+                <ul>
+                    <li>
+                        <a href="/">
+                            <i class="fas fa-circle-notch"></i>
+                            <span>HealthProbe</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="help"> 
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-question"></i>
+                            <span>Help</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <main>
+            <nav class="dsh-navbar">
+                <div class="input-wrap panel">
+                    <i class="fas fa-search"></i>
+                    <input type="search" placeholder="Search">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <i class="fas fa-cog"></i>
+                        </li>
+                        <li>
+                            <i class="fas fa-bell"></i>
+                        </li>
+                    </ul>
+
+                    <div class="profile panel">
+                        <div>
+                            <!--<img src="{{ url_for('static', filename='img/profile-2398782_640.png') }}" alt="Profile Picture">-->
+                            <img src="../static/img/profile-2398782_640.png" alt="Profile Picture">
+                            <span>Jane Doe</span>
+                        </div>
+                        <div>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            
+            <div class="dash">
+                <div class="stats">
+                    <h1 class="dsh-title">Welcome!</h1>
+                    <div class="overview">
+                        <div class="user-info">
+                            <div class="profile-card panel">
+                                <!--<img src="{{ url_for('static', filename='img/profile-2398782_640.png') }}" alt="user">-->
+                                <img src="../static/img/profile-2398782_640.png" alt="user">
+                                <h3>Jane Doe</h3>
+                                <div class="profile-stats">
+                                    <div>
+                                        <h2>Address:</h2>
+                                        <small>Jokiväylä 11, 96300 Rovaniemi</small>
+                                    </div>
+                                    <div>
+                                        <h2>Age:</h2>
+                                        <small>68</small>
+                                    </div>
+                                    <div>
+                                        <h2>Sex:</h2>
+                                        <small>Female</small>
+                                    </div>
+                                </div>                                   
+                            </div>
+
+                            <div class="panel"  id="humidity-plot-container">
+                                <!-- Humidity plot will be displayed here -->
+                                <img src="../static/img/White_Noise.jpg" alt="Video Feed">
+                            </div>
+                            <div class="panel" id="temperature-plot-container">
+                                <!-- Temperature plot will be displayed here -->
+                                <img src="../static/img/White_Noise.jpg" alt="Video Feed">
+                            </div>
+                        </div>
+                        <div class="panel cameras">
+                            <!--
+                            <img src="{{ url_for('video_feed') }}" alt="Video Feed">
+                            <img src="{{ url_for('static', filename='img/vector-video-player-941434_640.png') }}" alt="camera2">
+                            <img src="{{ url_for('static', filename='img/vector-video-player-941434_640.png') }}" alt="camera3">
+                            <img src="{{ url_for('static', filename='img/vector-video-player-941434_640.png') }}" alt="camera4">
+                            -->
+                            <img src="../static/img/White_Noise.jpg" alt="Video Feed">
+                            <img src="../static/img/vector-video-player-941434_640.png" alt="camera2">
+                            <img src="../static/img/vector-video-player-941434_640.png" alt="camera3">
+                            <img src="../static/img/vector-video-player-941434_640.png" alt="camera4">
+                        </div>
+                        <div class="alerts">
+                            <div class="alerts-header">
+                                <h3>Last Alerts</h3>
+            
+                                <div class="alerts-dropdown" id="data-container">
+                                    <div class="notify_img">
+                                        <img src="../static/img/icon.png" alt="Icon" class="icon">
+                                      </div>
+                                      <div class="notify_info">
+                                        <p>Humidity alert</p>
+                                        <p>99</p>
+                                        <span class="notify_time">05.12.2023 16:28:33</span>
+                                      </div>
+                                      <div class="notify_img">
+                                        <img src="../static/img/icon.png" alt="Icon" class="icon">
+                                      </div>
+                                      <div class="notify_info">
+                                        <p>Humidity alert</p>
+                                        <p>99</p>
+                                        <span class="notify_time">05.12.2023 16:28:33</span>
+                                      </div>
+                                      <div class="notify_img">
+                                        <img src="../static/img/icon.png" alt="Icon" class="icon">
+                                      </div>
+                                      <div class="notify_info">
+                                        <p>Humidity alert</p>
+                                        <p>99</p>
+                                        <span class="notify_time">05.12.2023 16:28:33</span>
+                                      </div>
+                                      <div class="notify_img">
+                                        <img src="../static/img/icon.png" alt="Icon" class="icon">
+                                      </div>
+                                      <div class="notify_info">
+                                        <p>Humidity alert</p>
+                                        <p>99</p>
+                                        <span class="notify_time">05.12.2023 16:28:33</span>
+                                      </div>
+                                      <div class="notify_img">
+                                        <img src="../static/img/icon.png" alt="Icon" class="icon">
+                                      </div>
+                                      <div class="notify_info">
+                                        <p>Humidity alert</p>
+                                        <p>99</p>
+                                        <span class="notify_time">05.12.2023 16:28:33</span>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-warning" onclick="functionAlert()">Send help!</button>
+
+                    </div>
+                </div>
+            </div>
+
+            
+        </main>
+    </body>
+
+</html>
